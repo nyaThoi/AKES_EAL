@@ -158,7 +158,7 @@ void SelectEudemon(int slotID, EudemonWindow* ei, u32 fct = EUDEMON_SELECT_FUNCT
 bool IsEudemonMeditating(int slotID, u32 lpFunction = EUDEMON_ISMEDITATING_FUNCTION);
 bool HasEudemonGift(int slotID, u32 lpFunction = EUDEMON_HASGIFT_FUNCTION);
 void UpdateEudemons(float dt);
-
+void UpdatelocalPlayerChanges(bool ShurikenHack, bool SpeedHack);
 
 
 class WindowManager

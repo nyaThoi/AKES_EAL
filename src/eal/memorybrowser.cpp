@@ -51,34 +51,44 @@ const char* const MemoryPatternTableStrings[GAID_MAX] =
 MemorySearchEntry MemoryPatternTable[GAID_MAX] = 
 {
 	// GET_LOCAL_PLAYER :				C0 89 87 04 01 // OK (search for s90351)
-	MemorySearchEntry((u8*)"\xC0\x89\x87\x04\x01",		"xxxxx",	-0x5,	2, MemorySearchEntry::RT_REL_ADDRESS), 
+	//	00733860	-	OK
+	MemorySearchEntry((u8*)"\xC0\x89\x87\x04\x01",		"xxxxx",	-0x5,	1, MemorySearchEntry::RT_REL_ADDRESS), 
 
 	// INVENTORY_ACCESS_FUNCTION :		FF 5E 5D C2 14 // OK
+	//	007BF260	-	ok
 	MemorySearchEntry((u8*)"\xFF\x5E\x5D\xC2\x14",		"xxxxx",	-0xD,	2, MemorySearchEntry::RT_REL_ADDRESS), 
 
 	// TARGETING_COLLECTIONS_BASE :		68 50 06 00 00 // OK ++
+	//	013DFF90	-	ok
 	MemorySearchEntry((u8*)"\x68\x50\x06\x00\x00",		"xxxxx",	0x30,	1, MemorySearchEntry::RT_ADDRESS), 
 
 	// WND_INTERFACE_BASE :				4E 24 83 B9 B0 // OK +++
+	//	01BE2EF8	-	ok
 	MemorySearchEntry((u8*)"\x4E\x24\x83\xB9\xB0",		"xxxxx",	0x1F,	1, MemorySearchEntry::RT_ADDRESS), 
 
 	// EUDEMON_GETEUDEMON_FUNCTION :	DB 0F 84 5E 01 // OK (search for call of SET_NEAREST_TARGET_FUNCTION)
+	//	0073EA50	-	+++
 	MemorySearchEntry((u8*)"\xDB\x0F\x84\x5E\x01",		"xxxxx",	-0x7,	1, MemorySearchEntry::RT_REL_ADDRESS), 
 	// EUDEMON_SENDCOMMAND_FUNCTION :	6A 04 6A 00 52 // OK +++
+	//	00783CB0	-	+
 	MemorySearchEntry((u8*)"\x6A\x04\x6A\x00\x52",		"xxxxx",	0x6,	1, MemorySearchEntry::RT_REL_ADDRESS), 
 	// EUDEMON_SELECT_FUNCTION :		FB FF 56 8B F1 // OK
+	//	00A11A20	-	++
 	MemorySearchEntry((u8*)"\xFB\xFF\x56\x8B\xF1",		"xxxxx",	-0x21,	1, MemorySearchEntry::RT_LOCATION), 
 	// EUDEMON_ISMEDITATING_FUNCTION :	3B 01 7D 1A 0F // OK (search in EUDEMON_SELECT_FUNCTION)
+	//	00743CA0	-	+
 	MemorySearchEntry((u8*)"\x3B\x01\x7D\x1A\x0F",		"xxxxx",	-0x11,	1, MemorySearchEntry::RT_LOCATION), 
 	// EUDEMON_HASGIFT_FUNCTION :		3B 01 7D 1A 0F // OK (search in EUDEMON_SELECT_FUNCTION)
+	//	00743DF0	-	++
 	MemorySearchEntry((u8*)"\x3B\x01\x7D\x1A\x0F",		"xxxxx",	-0x11,	2, MemorySearchEntry::RT_LOCATION), 
 
 	// CURRENT_MAP_BASE :				C0 74 0D 83 3D // OK
+	//	013DFE28	-	ok
 	MemorySearchEntry((u8*)"\xC0\x74\x0D\x83\x3D",		"xxxxx",	-0xA,	1, MemorySearchEntry::RT_ADDRESS),
 	
-	// DETOUR_MAIN_LOOP_OFFSET :		FF 80 BE 08 01 // OK
+	// DETOUR_MAIN_LOOP_OFFSET :		FF 80 BE 08 01 // OK +
 	MemorySearchEntry((u8*)"\xFF\x80\xBE\x08\x01",		"xxxxx",	0x1,	1, MemorySearchEntry::RT_LOCATION, true, (u8*)"\x80\xBE\x08\x01\x00\x00\x00"),	
-	// DETOUR_CRASH_HANDLER_OFFSET :	4D EC 51 6A 05 // OK (TopLevelExceptionFilter)
+	// DETOUR_CRASH_HANDLER_OFFSET :	4D EC 51 6A 05 // OK (TopLevelExceptionFilter) ++
 	MemorySearchEntry((u8*)"\x4D\xEC\x51\x6A\x05",		"xxxxx",	-0x56,	1, MemorySearchEntry::RT_LOCATION, true, (u8*)"\x64\xA1\x00\x00\x00\x00")
 };
 

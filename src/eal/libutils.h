@@ -52,7 +52,8 @@ struct EntityInfo
 	u32 currentHP;//8
 	u32 cash;//C
 	u32 level;//10
-	u8 unk3[0x118];//14
+	float sMov;//14
+	u8 unk3[0x114];//18
 	std::string charName; // 0x12C
 	u8 unk4[0x320];// 0x148
 };
@@ -76,6 +77,8 @@ struct Entity
 	u8 unk3[0x10];//1C
 	u32 typeID;//2C
 	void* actor;//30
+	u8 unk4[0x724];//0x34
+	u16 skenClass;//0x758
 };
 
 enum InventoryType {IT_BackPack = 0, IT_Equipment = 1, IT_Bank = 4, IT_BackPack_Bags = 5, IT_EudemonInventory = 6};
@@ -114,10 +117,11 @@ struct Eudemon // size = 0x160 ?
 	u32 eudemonPtr;
 	u16 slotIdx;// 4
 	u16 unk1;
-	u8 unk2[0x12C];// 8
-	u32 currentPM;// 134
-	u16 chatAttempts;// 138
-	u16 unk3;	
+	u8 unk2[0x124];// 8
+	//	currentPM on AKES -> 0x12C
+	u32 currentPM;// 134 -> 0x12C
+	u16 chatAttempts;// 138 -> 0x130
+	u16 unk3;
 	u8 unk4[0x24];// 13C
 };
 

@@ -363,6 +363,16 @@ void UpdateEudemons(float dt)
 	}
 }
 
+void UpdatelocalPlayerChanges(bool ShurikenHack, bool SpeedHack)
+{
+	Entity* localPlayer = GetLocalPlayer();
+	EntityInfo* data = localPlayer ? localPlayer->info : NULL;
+	if(ShurikenHack)
+		localPlayer->skenClass = 5;
+	if(SpeedHack)
+		data->sMov = 20;
+
+}
 
 #include "imagehlp.h"
 #pragma comment(lib,"Dbghelp.lib")
