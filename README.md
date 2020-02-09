@@ -20,7 +20,7 @@ EAL is a self contained minibot automatically **managing your eidolons**. It wil
   - **Gameguard** thread killer
   - **Multiclient** feature
   
-  - **SpeedHack ** feature
+  - **SpeedHack** feature
   
 ## Repository content
 This project can be compiled using **Visual Studio 2017** or **Visual Studio Code** (using VS2017 compiler). Both project files are provided here.
