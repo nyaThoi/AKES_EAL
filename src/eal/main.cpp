@@ -318,8 +318,8 @@ DEFINE_HOOK(MainLoop)
 			// Bot updates from main loop (can use game code threadsafely)
 			{
 				UpdateEudemons(dt);
-				//ShurikenHack , SpeedHack
-				UpdatelocalPlayerChanges(true, true);
+				//SpeedHack
+				UpdatelocalPlayerChanges(true);
 			}
 		}
 	}

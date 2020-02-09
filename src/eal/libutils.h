@@ -77,8 +77,8 @@ struct Entity
 	u8 unk3[0x10];//1C
 	u32 typeID;//2C
 	void* actor;//30
-	u8 unk4[0x724];//0x34
-	u16 skenClass;//0x758
+	u8 unk4[0x72C];//0x34
+	u16 skenClass;//0x760 (old Off 0x758)
 };
 
 enum InventoryType {IT_BackPack = 0, IT_Equipment = 1, IT_Bank = 4, IT_BackPack_Bags = 5, IT_EudemonInventory = 6};

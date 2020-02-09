@@ -363,12 +363,11 @@ void UpdateEudemons(float dt)
 	}
 }
 
-void UpdatelocalPlayerChanges(bool ShurikenHack, bool SpeedHack)
+void UpdatelocalPlayerChanges(bool SpeedHack)
 {
 	Entity* localPlayer = GetLocalPlayer();
 	EntityInfo* data = localPlayer ? localPlayer->info : NULL;
-	if(ShurikenHack)
-		localPlayer->skenClass = 5;
+	if (!localPlayer && !data) return;
 	if(SpeedHack)
 		data->sMov = 20;
 

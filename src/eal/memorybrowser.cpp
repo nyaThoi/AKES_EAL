@@ -56,7 +56,7 @@ MemorySearchEntry MemoryPatternTable[GAID_MAX] =
 
 	// INVENTORY_ACCESS_FUNCTION :		FF 5E 5D C2 14 // OK
 	//	007BF260	-	ok
-	MemorySearchEntry((u8*)"\xFF\x5E\x5D\xC2\x14",		"xxxxx",	-0xD,	2, MemorySearchEntry::RT_REL_ADDRESS), 
+	MemorySearchEntry((u8*)"\xFF\x5E\x5D\xC2\x14",		"xxxxx",	-0xD,	3, MemorySearchEntry::RT_REL_ADDRESS), 
 
 	// TARGETING_COLLECTIONS_BASE :		68 50 06 00 00 // OK ++
 	//	013DFF90	-	ok
