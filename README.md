@@ -1,5 +1,5 @@
 # EAL
-## Eidolon Auto Link for Aura Kingdom
+## Eidolon Auto Link for Aura Kingdom ES
 
 **This code is released for educational purpose only** under GNU GPL v3 licence.
 
@@ -24,7 +24,7 @@ EAL is a self contained minibot automatically **managing your eidolons**. It wil
   
 ## Repository content
 This project can be compiled using **Visual Studio 2017** or **Visual Studio Code** (using VS2017 compiler). Both project files are provided here.
-The code is using some hardoded **byte patterns** that will potentially need to be changed if the client code changes too much after some **future game update**. It currently works with **official FR/US/DE clients** of the game. Feel free to fork this repository and update the patterns or try to find patterns working on every clients, or even add some client detection to switch patterns accordingly if needed.
+The code is using some hardoded **byte patterns** that will potentially need to be changed if the client code changes too much after some **future game update**. It currently works with **official ES clients** of the game. Feel free to fork this repository and update the patterns or try to find patterns working on every clients, or even add some client detection to switch patterns accordingly if needed.
 
 
 ### Please do not ask for more features or maintaining the patterns.
