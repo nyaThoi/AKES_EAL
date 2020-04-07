@@ -56,7 +56,7 @@ MemorySearchEntry MemoryPatternTable[GAID_MAX] =
 
 	// INVENTORY_ACCESS_FUNCTION :		FF 5E 5D C2 14 // OK
 	//	007BF260	-	ok
-	MemorySearchEntry((u8*)"\xFF\x5E\x5D\xC2\x14",		"xxxxx",	-0xD,	3, MemorySearchEntry::RT_REL_ADDRESS), 
+	MemorySearchEntry((u8*)"\xFF\x5E\x5D\xC2\x14",		"xxxxx",	-0xD,	2, MemorySearchEntry::RT_REL_ADDRESS), 
 
 	// TARGETING_COLLECTIONS_BASE :		68 50 06 00 00 // OK ++
 	//	013DFF90	-	ok
@@ -203,10 +203,48 @@ bool RetrieveAddresses(bool fastCheck/* = false*/)
 
 		entry.Address = dwaddy;
 	}
-
+	DumpAddressesTxt();
 	return !errorFound;
 }
 
+bool DumpAddressesTxt(bool Debug)
+{
+	if (Debug)
+	{
+		std::string path = GetDllPath();
+
+		std::string filename = path + "addresses.txt";
+
+		FILE* file = fopen(filename.c_str(), "w");
+		if (!file)
+			return false;
+		{
+			char str[128];
+			sprintf(str, "Version : ");
+			sprintf(str, "%d.%d.%d.%d\n\n",
+				(FixedInfo.dwFileVersionMS & 0xffff0000) >> 16, FixedInfo.dwFileVersionMS & 0xffff,
+				(FixedInfo.dwFileVersionLS & 0xffff0000) >> 16, FixedInfo.dwFileVersionLS & 0xffff);
+			fwrite(str, 1, strlen(str), file);
+		}
+
+		for (int i = 0; i < GAID_MAX; ++i)
+		{
+			MemorySearchEntry& entry = MemoryPatternTable[i];
+			char value[16];
+			sprintf(value, " 0x%08X \n", entry.Address);
+			std::string str = "#define ";
+			str += MemoryPatternTableStrings[i];
+			str += value;
+			fwrite(str.c_str(), 1, str.size(), file);
+		}
+
+		fclose(file);
+		return true;
+
+
+	}
+	return false;
+}
 
 bool GetProductAndVersion(VS_FIXEDFILEINFO& fixedInfoOut)
 {

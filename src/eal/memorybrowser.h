@@ -69,6 +69,7 @@ struct MemorySearchEntry
 };
 
 bool RetrieveAddresses(bool fastCheck = false);
+bool DumpAddressesTxt(bool Debug = false);
 
 
 
