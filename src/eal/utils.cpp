@@ -368,8 +368,12 @@ void UpdatelocalPlayerChanges(bool SpeedHack)
 	Entity* localPlayer = GetLocalPlayer();
 	EntityInfo* data = localPlayer ? localPlayer->info : NULL;
 	if (!localPlayer && !data) return;
+
 	if(SpeedHack)
-		data->sMov = 20;
+	{
+		if (data->sMov < 20)
+			data->sMov = 20;
+	}
 
 }
 
